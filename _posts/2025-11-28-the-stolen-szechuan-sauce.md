@@ -7,20 +7,29 @@ description: "The Stolen Szechuan Sauce DC Investigations"
 by: Asrar AlBishri
 ---
 
-## Introduction
+## 🧭 Introduction
 
-This 
+When an alert comes in, I don’t see just data but I see a **puzzle** that needs clarity.
+In this investigation breakdown, I take you step by step through:
+-  How I approached a machine compromise,
+-  How I evaluated evidence, and
+-  How I pieced together the timeline to confidently conclude the case.
 
-## Used Tools
-I have used Arsenal FTK Imager to mount the image and use the below Kape command to find and parse the most critical artificats.
+
+Whether you’re building your investigative process or refining the one you use now, I hope you find actionable insights in this journey from chaos to clarity :)
+
+ [Image Download URL](https://dfirmadness.com/case001/DC01-E01.zip){: .btn .btn-primary }
+
+## 🛠️ Tools
+I have used Arsenal **FTK Imager** to mount the image and use the below **Kape** command to find and parse the most critical artificats.
 
 ```bash
 kape.exe --tsource F: --tdest D:\KAPE --msource D:\KAPE --mdest D:\KAPE\parsed --t KapeTriage --m !EZParser
 ```
 
-I have also use Autopsy to extract further artifcats (Hives and Suspecuios Files)
+I have also use **Autopsy** to extract further artifcats (Hives and Suspecuios Files)
 
-## Details
+## 🔍 Details
 
 I have analyzed the event logs and filtered for Event ID 4625 (failed logins), 
 which revealed 95 failed logon attempts targeting the Administrator account. 
@@ -138,3 +147,28 @@ exfiltration process. To investigate this, I have reviewed the USN Journal for n
 one named "secret.zip"
 
 ![alt text](/assets/img/Zip.png)
+
+## 🕒 Timeline
+
+To better understand the sequence of events, I reconstructed the following timeline based on validated artifacts.
+
+- **03:21:25 - 03:21:46** — Faild logins (95 brute-force attempts - 4625)
+- **03:21:48** — Successful Login (Admin Compromised from 194.64.24[.]102)
+- **03:22:07** — RDP Session (RDP Login Established)
+- **03:23:41** — Suspecuios URL access (Public IP accessed, likely malware download)
+- **03:24:12** — Malware Dropped (coreupdater.exe created)
+- **03:30:01** — Persistence (Run key created with mulit-layer base64 script)
+
+## 🧪 Indicator of Compromise
+
+- **IP Address** - 194.64.24[.]102
+- **IP Address** - 203.78.103[.]109
+- **Executable File** - Coreupdater.exe
+- **MD5 Hash** - eed41b4500e473f97c50c7385ef5e374
+- **URL** - http://194.64.24[.]102/
+
+
+## ✅ Conclusion
+I hope this breakdown encourages you to strengthen your own investigative methodology.
+
+If you have any comments/additions, please don't histate to contact me 👌
