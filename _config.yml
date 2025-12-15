@@ -39,7 +39,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
    # - https://twitter.com/username # change to your Twitter homepage
-    - https://www.linkedin.com/in/asraralbeshri
+    - https://www.linkedin.com/in/username
     - https://github.com/asraralbeshri # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -151,7 +151,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "https://asraralbeshri.github.io"
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
