@@ -57,7 +57,7 @@ Jun 2021 – Oct 2021
 - Certified Threat Hunting Professional (CTHP) – eLearnSecurity
 - Enterprise Incident Response & Threat Hunting – SANS
 - Ransomware and Cyber Extortion – SANS
--  Reverse Engineering Malware, Red Team Operations – SANS
+-  Reverse Engineering Malware, Red Team Operations – SAN
 
 
 
