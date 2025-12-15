@@ -123,14 +123,14 @@ The decoded data of the above encoded data
 
 ![alt text](/assets/img/Stage1Decoded.png)
 
-We attempted to decode the embedded encoded data using the CyberChef modules shown below.
+I had attempted to decode the embedded encoded data using the CyberChef modules shown below.
 
 ![alt text](/assets/img/Stage2.png)
 
 The decoded data of the above encoded data indicating fileless loader / reflective shellcode injector. The loader will: 
 1.	Defines helper functions that wrap native Windows API calls (via .NET reflection and P/Invoke).
 2.	Contains a large Base64 blob ($gri) which is binary shellcode (or a binary payload) encoded in Base64.
-3.	Allocates executable memory in the current process, writes the decoded shellcode into that memory, and then creates a thread to execute it — all done in memory (no file written to disk).
+3.	Allocates executable memory in the current process, writes the decoded shellcode into that memory and then creates a thread to execute it (all done in memory - fileless attack )
 4.	The payload is therefore a memory-resident, in-memory shellcode execution (typical for malware trying to evade AV and forensic detection).
 
 ![alt text](/assets/img/Stage2Decoded.png)
@@ -152,10 +152,10 @@ one named "secret.zip"
 
 To better understand the sequence of events, I reconstructed the following timeline based on validated artifacts.
 
-- **03:21:25 - 03:21:46** — Faild logins (95 brute-force attempts - 4625)
-- **03:21:48** — Successful Login (Admin Compromised from 194.64.24[.]102)
-- **03:22:07** — RDP Session (RDP Login Established)
-- **03:23:41** — Suspecuios URL access (Public IP accessed, likely malware download)
+- **03:21:25 - 03:21:46** — Faild logins (95 brute-force attempts)
+- **03:21:48** — Successful Login (Compromised Admin from 194.64.24[.]102)
+- **03:22:07** — RDP Session Established
+- **03:23:41** — Suspecuios URL access (Public IP accessed likely for malware download)
 - **03:24:12** — Malware Dropped (coreupdater.exe created)
 - **03:30:01** — Persistence (Run key created with mulit-layer base64 script)
 
