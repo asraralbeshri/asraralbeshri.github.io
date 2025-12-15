@@ -1,6 +1,6 @@
 ---
 title: "The Stolen Szechuan Sauce - DC"
-date: 2025-28-11 12:00:00 +0300
+date: 2025-11-28 12:00:00 +0300
 categories: [Digital Forensics, Investigations]
 tags: [Digital Forensics, Cybersecurity]
 description: "The Stolen Szechuan Sauce DC Investigations"
